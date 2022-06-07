@@ -3,7 +3,7 @@ import { ref } from "vue";
 const isDropdown = ref(false);
 </script>
 <template>
-  <nav class="flex sticky z-50 top-0 bg-[#00296B] text-white h-auto px-8 py-6 w-full justify-center">
+  <nav class="flex sticky z-10 top-0 bg-[#00296B] text-white h-auto px-8 py-6 w-full justify-center">
     <div class="flex items-center w-full justify-between">
       <div class="flex ml-5 justify-center items-center">
         <img width="30" src="../../assets/logo.png" alt="" />

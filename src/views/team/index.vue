@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import Modal from "../../components/Modal/index.vue";
+
+const isModalShow = ref(false);
+const showModal = () => {
+    isModalShow.value = true;
+};
+const closeModal = () => {
+    isModalShow.value = false;
+};
+
+
+
+</script>
 <template>
     <Navbar />
 
@@ -22,7 +37,8 @@
                         </div>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-[#D9D9D9] text-sm">
-                        <button class="mr-5 bg-[#00509D] text-[#FFD500] font-bold py-1 px-3 rounded-full">
+                        <button @click="showModal"
+                            class="mr-5 bg-[#00509D] text-[#FFD500] font-bold py-1 px-3 rounded-full">
                             INFO TEAM
                         </button>
                     </td>
@@ -125,6 +141,12 @@
             </tbody>
         </table>
     </div>
+
+    <Modal v-if="isModalShow" @cancel="closeModal" title="Info Team" button-color="bg-blue-500" cancel-text="Batal"
+        submit-text="Simpan">
+
+    </Modal>
+
 
     <Footer class="z-0 bottom-0" />
 </template>
